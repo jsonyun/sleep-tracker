@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SleepdataService } from '../sleepdata.service';
 
 @Component({
   selector: 'app-tab2',
@@ -7,8 +8,8 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  constructor(private sleepDataService: SleepdataService) {}
   onSubmit(form: any) {
-    console.log('Form Data: ', form.value);
+    this.sleepDataService.addSleepData(form.value);
   }
 }

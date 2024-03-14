@@ -1,22 +1,22 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-export interface SleepData {
+export interface SleepinessData {
   date: string;
-  sleep: string;
-  wakeup: string;
+  time: string;
+  sleepiness: number;
 }
 
 @Injectable({
   providedIn: 'root'
 })
-export class SleepdataService {
-  private sleepData = new BehaviorSubject<SleepData[]>([]);
+export class SleepinessdataService {
+  private sleepData = new BehaviorSubject<SleepinessData[]>([]);
   currentSleepData = this.sleepData.asObservable();
 
   constructor() { }
 
-  addSleepData(newData: SleepData) {
+  addSleepinessData(newData: SleepinessData) {
     const currentData = this.sleepData.value;
     this.sleepData.next([...currentData, newData]);
   }

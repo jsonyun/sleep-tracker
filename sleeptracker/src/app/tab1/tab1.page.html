@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Overview Sleep Data
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,48 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">Overview Sleep Data</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <div class="container mt-3" *ngIf="sleepData && sleepData.length > 0">
+    <h2>Sleep Data Records</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Time Sleep</th>
+          <th>Time Wake up</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let sleep of sleepData">
+          <td>{{ sleep.date }}</td>
+          <td>{{ sleep.sleep }}</td>
+          <td>{{ sleep.wakeup }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="container mt-3" *ngIf="sleepinessData && sleepinessData.length > 0">
+    <h2>Sleepiness Data Records</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Time of Log</th>
+          <th>Sleepiness</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let sleepy of sleepinessData">
+          <td>{{ sleepy.date }}</td>
+          <td>{{ sleepy.time }}</td>
+          <td>{{ sleepy.sleepiness }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
 </ion-content>
