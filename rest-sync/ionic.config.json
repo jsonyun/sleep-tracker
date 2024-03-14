@@ -1,0 +1,7 @@
+{
+  "name": "RestSyncc",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
