@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Logging Sleep
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Logging Sleep</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div class="container mt-5">
+    <h2>Sleeping Form</h2>
+    <form #sleepForm="ngForm" (ngSubmit)="onSubmit(sleepForm)" class="mt-4">
+      <div class="mb-3">
+        <label for="date" class="form-label">Date:</label>
+        <input type="date" id="date" name="date" ngModel class="form-control">
+      </div>
+      <div class="mb-3">
+        <label for="time1" class="form-label">When Sleep:</label>
+        <input type="time" id="time1" name="time1" ngModel class="form-control">
+      </div>
+      <div class="mb-3">
+        <label for="time2" class="form-label">Wake up:</label>
+        <input type="time" id="time2" name="time2" ngModel class="form-control">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</ion-content>
